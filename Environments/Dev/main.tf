@@ -47,3 +47,10 @@ resource "azurerm_storage_container" "blob" {
   storage_account_id    = azurerm_storage_account.strg.id
   container_access_type = "private"
 }
+
+resource "azurerm_storage_container" "blob" {
+  count = 5
+  name                  = "storage-blob-${count.index}"
+  storage_account_id    = azurerm_storage_account.strg.id
+  container_access_type = "private"
+}
