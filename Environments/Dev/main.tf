@@ -29,6 +29,11 @@ resource "azurerm_resource_group" "rgs" {
   location = "centralindia"
 }
 
+resource "azurerm_resource_group" "rgs1" {
+  name     = "dev-rg1"
+  location = "centralindia"
+}
+
 resource "azurerm_storage_account" "strg" {
   name                     = "devstrg001"
   location                 = azurerm_resource_group.rgs.location
